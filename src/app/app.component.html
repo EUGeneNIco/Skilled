@@ -8,7 +8,7 @@
       </a>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzTitle="Search" nzIcon="file-search">
+      <!-- <li nz-submenu nzTitle="Search" nzIcon="file-search">
         <ul>
           <li nz-menu-item nzMatchRouter>
             <a routerLink="/job-search">Job</a>
@@ -17,6 +17,18 @@
             <a routerLink="/candidate-search">Candidates</a>
           </li>
         </ul>
+      </li> -->
+      <li nz-menu-item routerLink="/dashboard" nzMatchRouter>
+        <span nz-icon nzType="dashboard"></span>
+        <span>Dashboard</span>
+      </li>
+      <li nz-menu-item routerLink="/job-search" nzMatchRouter>
+        <span nz-icon nzType="pic-right" nzTheme="outline"></span>
+        <span>Job</span>
+      </li>
+      <li nz-menu-item routerLink="/candidate-search" nzMatchRouter>
+        <span nz-icon nzType="usergroup-add"></span>
+        <span>Candidates</span>
       </li>
     </ul>
   </nz-sider>

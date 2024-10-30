@@ -4,11 +4,11 @@ import { JobSearchComponent } from './pages/job-search/job-search.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 export const routes: Routes = [
-  // { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent },
 
   { path: 'job-search', component: JobSearchComponent },
 
   { path: 'candidate-search', component: CandidateSearchComponent },
 
-  { path: '', pathMatch: 'full', redirectTo: '/job-search' },
+  { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
 ];

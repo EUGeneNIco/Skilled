@@ -1,4 +1,12 @@
 <h2>Jobs</h2>
-<ul *ngIf="jobList().length > 0">
-    <li *ngFor="let job of jobList()">{{job.title}}</li>
-</ul>
+<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+    <div nz-col class="gutter-row" [nzSpan]="6" *ngFor="let job of jobList()">
+        <div class="inner-box">
+            <nz-card style="width:300px;" [nzBordered]="true" [nzTitle]="job.title">
+                <p>Company: {{job.companyName}}</p>
+                <p>{{setups[job.setup]}}, {{employmentTypes[job.employmentType]}}</p>
+                <p>Salary: {{job.salary}}</p>
+            </nz-card>
+        </div>
+    </div>
+</div>

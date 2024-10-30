@@ -3,9 +3,10 @@ import { Setup } from "../enums/setup";
 
 export interface Job {
     id: number,
-    location: string,
-    jobDescription: string,
     title: string,
+    location: string,
+    companyName: string,
+    jobDescription: string,
     requirements: string,
     salary: string,
     postedDate: Date,
