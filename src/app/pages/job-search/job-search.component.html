@@ -1,11 +1,54 @@
 <h2>Jobs</h2>
-<div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
-    <div nz-col class="gutter-row" [nzSpan]="6" *ngFor="let job of jobList()">
-        <div class="inner-box">
-            <nz-card style="width:300px;" [nzBordered]="true" [nzTitle]="job.title">
+<div nz-row>
+    <div nz-col [nzSpan]="18" [nzPush]="6">
+        <nz-card class="inner-box flex-item job-details" nzBordered="false">
+            <ng-template [ngIf]="selectedJob" [ngIfElse]="noSelectedJob">
+                <p class="title">{{selectedJob.title}}</p>
+                <p class="company">{{selectedJob.companyName}}</p>
+                <ul>
+                    <li>
+                        <span class="material-symbols-outlined">
+                            location_on
+                        </span>
+                        <p>{{selectedJob.location}}</p>
+                    </li>
+                    <li>
+                        <span class="material-symbols-outlined">
+                            apartment
+                        </span>
+                        <p>{{employmentTypes[selectedJob.employmentType]}}</p>
+                    </li>
+                    <li>
+                        <span class="material-symbols-outlined">
+                            schedule
+                        </span>
+                        <p>{{setups[selectedJob.setup]}}</p>
+                    </li>
+                    <li>
+                        <span class="material-symbols-outlined">
+                            payments
+                        </span>
+                        <p>{{selectedJob.salary}}</p>
+                    </li>
+                    <p class="posted">Posted 1d ago</p>
+                    <p class="description">{{selectedJob?.jobDescription}}</p>
+                    <div class="actions">
+                        <button nzSize="large" nz-button nzType="primary">Apply</button>
+                        <button nzSize="large" nz-button nzType="text">Save</button>
+                    </div>
+                </ul>
+            </ng-template>
+            <ng-template #noSelectedJob>
+                <p>No job selected.</p>
+            </ng-template>
+        </nz-card>
+    </div>
+    <div class="job-list" nz-col [nzSpan]="6" [nzPull]="18">
+        <div nz-flex nzVertical>
+            <nz-card class="inner-box flex-item" [nzBordered]="true" [nzTitle]="job.title" *ngFor="let job of jobList()"
+                (click)="onSelectJob(job.id)">
                 <p>Company: {{job.companyName}}</p>
                 <p>{{setups[job.setup]}}, {{employmentTypes[job.employmentType]}}</p>
-                <p>Salary: {{job.salary}}</p>
             </nz-card>
         </div>
     </div>

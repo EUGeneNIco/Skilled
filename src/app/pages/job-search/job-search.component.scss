@@ -1,0 +1,52 @@
+.inner-box {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.job-list {
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.job-details {
+  padding: 0 20px;
+  font-size: medium;
+
+  .title {
+    margin: 0;
+    font-size: xx-large;
+    font-weight: 600;
+  }
+
+  .company {
+    margin: 0 0 25px;
+    color: rgb(67, 65, 65);
+    font-size: larger;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .description {
+    margin-top: 40px;
+    font-size: large;
+  }
+
+  .posted {
+    color: rgb(110, 108, 108);
+    font-weight: 400;
+  }
+
+  .actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 30px;
+  }
+}

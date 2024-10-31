@@ -1,5 +1,5 @@
 export enum EmploymentType {
-    FullTime,
+    "Full Time",
     Contractual,
-    ProjectBased
+    "Project Based"
 }
