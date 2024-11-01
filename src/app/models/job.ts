@@ -10,6 +10,7 @@ export interface Job {
     requirements: string,
     salary: string,
     postedDate: Date,
+    postedDateString: string,
     setup: Setup,
     employmentType: EmploymentType,
 }

@@ -27,13 +27,13 @@ namespace Skilled.API.Repositories
         .RuleFor(j => j.CompanyName, f => f.Company.CompanyName())
         .RuleFor(x => x.Setup, f => f.PickRandom<Setup>())
         .RuleFor(j => j.Location, f => f.Address.City())
-        .RuleFor(j => j.JobDescription, f => f.Lorem.Paragraphs(1, 2))
+        .RuleFor(j => j.JobDescription, f => f.Lorem.Paragraphs(4,5))
         .RuleFor(j => j.Requirements, f => f.Lorem.Sentences(3, ","))
         .RuleFor(j => j.Salary, f => $"${f.Random.Int(50000, 150000)} - ${f.Random.Int(150001, 300000)}")
         .RuleFor(x => x.EmploymentType, f => f.PickRandom<EmploymentType>())
         .RuleFor(j => j.PostedDate, f => f.Date.Past(1));
 
-      var jobs = testJobs.Generate(20);
+      var jobs = testJobs.Generate(8);
       return jobs;
     }
   }

@@ -20,7 +20,20 @@ namespace Skilled.API.Controllers
     public IActionResult Get()
     {
       var jobs = _jobRepository.GetJobs();
-      return Ok(jobs);
+      var jobsResponse = jobs.Select(x => new JobViewModel
+      {
+        Id = x.Id,
+        Title = x.Title,
+        CompanyName = x.CompanyName,
+        Location = x.Location,
+        Setup = x.Setup,
+        EmploymentType = x.EmploymentType,
+        JobDescription = x.JobDescription,
+        Requirements = x.Requirements,
+        Salary = x.Salary,
+        PostedDate = x.PostedDate
+      });
+      return Ok(jobsResponse);
     }
   }
 }

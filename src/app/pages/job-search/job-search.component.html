@@ -30,11 +30,16 @@
                         </span>
                         <p>{{selectedJob.salary}}</p>
                     </li>
-                    <p class="posted">Posted 1d ago</p>
-                    <p class="description">{{selectedJob?.jobDescription}}</p>
+                    <p class="posted">Posted {{selectedJob.postedDateString}}</p>
+                    <p class="description">{{selectedJob.jobDescription}}</p>
                     <div class="actions">
                         <button nzSize="large" nz-button nzType="primary">Apply</button>
-                        <button nzSize="large" nz-button nzType="text">Save</button>
+                        <button nzSize="large" nz-button nzType="default">
+                            <span class="material-symbols-outlined">
+                                bookmark
+                            </span>
+                            <!-- Save -->
+                        </button>
                     </div>
                 </ul>
             </ng-template>
@@ -45,8 +50,9 @@
     </div>
     <div class="job-list" nz-col [nzSpan]="6" [nzPull]="18">
         <div nz-flex nzVertical>
-            <nz-card class="inner-box flex-item" [nzBordered]="true" [nzTitle]="job.title" *ngFor="let job of jobList()"
+            <nz-card class="inner-box flex-item" [nzBordered]="true" *ngFor="let job of jobList()"
                 (click)="onSelectJob(job.id)">
+                <p class="title">{{job.title}}</p>
                 <p>Company: {{job.companyName}}</p>
                 <p>{{setups[job.setup]}}, {{employmentTypes[job.employmentType]}}</p>
             </nz-card>

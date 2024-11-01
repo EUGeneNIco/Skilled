@@ -5,12 +5,23 @@
 
 .job-list {
   height: 80vh;
+  padding: 5px;
   overflow-y: auto;
+
+  p {
+    font-size: small;
+  }
+  .title {
+    font-size: large;
+    font-weight: 600;
+  }
 }
 
 .job-details {
+  height: 80vh;
   padding: 0 20px;
   font-size: medium;
+  overflow-y: auto;
 
   .title {
     margin: 0;
@@ -47,6 +58,10 @@
   .actions {
     margin-top: 40px;
     display: flex;
-    gap: 30px;
+    gap: 10px;
+
+    // span {
+    //   font-size: 1.4rem;
+    // }
   }
 }
