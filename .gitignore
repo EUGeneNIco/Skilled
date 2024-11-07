@@ -440,3 +440,5 @@ FodyWeavers.xsd
 Skilled.API/Properties/launchSettings.json
 Skilled.API/appsettings.json
 Skilled.API/appsettings.Development.json
+.nx/cache
+.nx/workspace-data
