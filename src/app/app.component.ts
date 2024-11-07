@@ -17,10 +17,10 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
     NzLayoutModule,
     NzMenuModule,
     RouterModule,
-    NzAvatarModule
+    NzAvatarModule,
   ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   private readonly authService = inject(AuthService);
