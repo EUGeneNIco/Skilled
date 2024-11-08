@@ -1,5 +1,5 @@
 export enum Setup {
-    Remote,
-    Hybrid,
-    Onsite
+  Remote,
+  Hybrid,
+  Onsite,
 }

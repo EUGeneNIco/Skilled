@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { JobService } from '../../services/job.service';
 import { Job } from '../../models/job';
 import { NzCardModule } from 'ng-zorro-antd/card';
@@ -13,7 +13,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
   standalone: true,
   imports: [CommonModule, NzCardModule, NzGridModule, NzButtonModule],
   templateUrl: './job-search.component.html',
-  styleUrl: './job-search.component.scss'
+  styleUrl: './job-search.component.scss',
 })
 export class JobSearchComponent implements OnInit {
   private readonly jobService = inject(JobService);
@@ -30,15 +30,17 @@ export class JobSearchComponent implements OnInit {
         console.log('jobs: ', data);
         this.jobList.set(data);
       },
-      error: (e) => {
+      error: e => {
         console.log('Error:', e);
-      }
-    })
+      },
+    });
   }
 
   onSelectJob(jobId: number) {
     const job = this.jobList().find(x => x.id === jobId);
-    if (job)
+    if (job) {
       this.selectedJob = job;
+    } else {
+    }
   }
 }

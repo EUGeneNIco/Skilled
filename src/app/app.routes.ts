@@ -5,11 +5,27 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthGuard } from './auth/auth.guard';
 
 export const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+  },
 
-  { path: 'job-search', component: JobSearchComponent, canActivate: [AuthGuard] },
+  {
+    path: 'job-search',
+    component: JobSearchComponent,
+    canActivate: [AuthGuard],
+  },
 
-  { path: 'candidate-search', component: CandidateSearchComponent, canActivate: [AuthGuard] },
+  {
+    path: 'candidate-search',
+    component: CandidateSearchComponent,
+    canActivate: [AuthGuard],
+  },
 
-  { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: '/dashboard',
+  },
 ];

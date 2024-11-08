@@ -4,13 +4,12 @@ import { HttpClient } from '@angular/common/http';
 import { Job } from '../models/job';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class JobService extends BaseService {
-
-  constructor(
-    public override http: HttpClient
-  ) { super(http) }
+  constructor(public override http: HttpClient) {
+    super(http);
+  }
 
   getList() {
     return this.http.get<Job[]>(this.apiUrl + 'api/job');
