@@ -21,6 +21,7 @@
     "@angular/router": "^17.3.0",
     "angular-oauth2-oidc": "^17.0.2",
     "ng-zorro-antd": "^17.4.1",
+    "ngx-spinner": "^17.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

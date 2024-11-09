@@ -23,6 +23,7 @@ import { authAppInitializerFactory } from './auth/auth-app-initializer.factory';
 import { authConfig } from './auth/auth-config';
 import { authModuleConfig } from './auth/auth-module-config';
 import { AuthService } from './services/auth.service';
+import { provideSpinnerConfig } from 'ngx-spinner';
 
 registerLocaleData(en);
 export function storageFactory(): OAuthStorage {
@@ -36,6 +37,7 @@ export const appConfig: ApplicationConfig = {
     provideNzI18n(en_US),
     importProvidersFrom(FormsModule),
     provideAnimationsAsync(),
+    provideSpinnerConfig({ type: 'ball-spin-clockwise' }),
     provideHttpClient(),
     {
       provide: APP_INITIALIZER,

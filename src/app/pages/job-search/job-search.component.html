@@ -33,13 +33,18 @@
                     <p class="posted">Posted {{selectedJob.postedDateString}}</p>
                     <p class="description">{{selectedJob.jobDescription}}</p>
                     <div class="actions">
+                        @if((authService.loggedInUser$ | async) !== null){
                         <button nzSize="large" nz-button nzType="primary">Apply</button>
                         <button nzSize="large" nz-button nzType="default">
                             <span class="material-symbols-outlined">
                                 bookmark
                             </span>
-                            <!-- Save -->
                         </button>
+                        }
+                        @else {
+                        <button nzSize="large" nz-button nzType="default" (click)="onSignIn()">Sign in with your
+                            account</button>
+                        }
                     </div>
                 </ul>
             </ng-template>

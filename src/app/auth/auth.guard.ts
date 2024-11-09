@@ -21,9 +21,11 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
     const isAuthenticated = this.authService.hasValidToken();
+    // TO DO logic
     if (!isAuthenticated) {
-      this.authService.handleLogout();
+      // this.authService.handleLogout();
     }
-    return isAuthenticated;
+    // return isAuthenticated;
+    return true;
   }
 }

@@ -7,6 +7,7 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { Setup } from '../../enums/setup';
 import { EmploymentType } from '../../enums/employmentType';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-job-search',
@@ -17,6 +18,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 })
 export class JobSearchComponent implements OnInit {
   private readonly jobService = inject(JobService);
+  readonly authService = inject(AuthService);
 
   jobList = signal<Job[]>([]);
   selectedJob!: Job;
@@ -40,7 +42,10 @@ export class JobSearchComponent implements OnInit {
     const job = this.jobList().find(x => x.id === jobId);
     if (job) {
       this.selectedJob = job;
-    } else {
     }
+  }
+
+  onSignIn() {
+    this.authService.login();
   }
 }

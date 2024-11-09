@@ -30,13 +30,19 @@
         <span nz-icon nzType="usergroup-add"></span>
         <span>Candidates</span>
       </li>
+      @if ((authService.loggedInUser$ | async) !== null) {
       <li nz-menu-item (click)="logout()">
         <span nz-icon nzType="logout" nzTheme="outline"></span>
-        <!-- <span class="material-symbols-outlined">
-          logout
-        </span> -->
         <span>Logout</span>
       </li>
+      }
+      @else {
+      <li nz-menu-item (click)="login()">
+        <span nz-icon nzType="login" nzTheme="outline"></span>
+        <span>Sign In with Google</span>
+      </li>
+      }
+
     </ul>
   </nz-sider>
   <nz-layout>
@@ -50,6 +56,7 @@
       </div>
     </nz-header>
     <nz-content>
+      <app-loading></app-loading>
       <div class="inner-content">
         <router-outlet></router-outlet>
       </div>
