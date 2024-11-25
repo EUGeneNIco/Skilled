@@ -51,7 +51,7 @@
         <span class="header-trigger header">
           <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
             (click)="isCollapsed = !isCollapsed"></span>
-          <nz-avatar nzIcon="user" [nzSrc]="!pictureSrc() ? '' : pictureSrc()"></nz-avatar>
+          <nz-avatar nzIcon="user" [nzSrc]="pictureSrc()"></nz-avatar>
         </span>
       </div>
     </nz-header>

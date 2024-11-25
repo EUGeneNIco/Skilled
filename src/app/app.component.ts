@@ -32,8 +32,6 @@ export class AppComponent implements OnInit {
   pictureSrc = signal('');
 
   ngOnInit(): void {
-    console.log('app comp runs..')
-
     this.authService.loggedInUser$.subscribe((user) => {
       if (!user) {
         this.pictureSrc.set('');

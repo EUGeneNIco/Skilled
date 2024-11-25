@@ -1,1 +1,6 @@
-<p>dashboard works!</p>
+@if ((authService.loggedInUser$ | async) !== null) {
+<h1>Welcome {{loggedInUserName()}}</h1>
+}
+@else {
+<p>Dashboard page</p>
+}

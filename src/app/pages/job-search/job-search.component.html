@@ -1,6 +1,16 @@
 <h2>Jobs</h2>
 <div nz-row>
-    <div nz-col [nzSpan]="18" [nzPush]="6">
+    <div class="job-list" nz-col nzMd="8" nzXl="5">
+        <div nz-flex nzVertical>
+            <nz-card class="inner-box flex-item" [nzBordered]="true" *ngFor="let job of jobList()"
+                (click)="onSelectJob(job.id)">
+                <p class="title">{{job.title}}</p>
+                <p>Company: {{job.companyName}}</p>
+                <p>{{setups[job.setup]}}, {{employmentTypes[job.employmentType]}}</p>
+            </nz-card>
+        </div>
+    </div>
+    <div nz-col nzMd="16" nzXl="19">
         <nz-card class="inner-box flex-item job-details" nzBordered="false">
             <ng-template [ngIf]="selectedJob" [ngIfElse]="noSelectedJob">
                 <p class="title">{{selectedJob.title}}</p>
@@ -52,15 +62,5 @@
                 <p>No job selected.</p>
             </ng-template>
         </nz-card>
-    </div>
-    <div class="job-list" nz-col [nzSpan]="6" [nzPull]="18">
-        <div nz-flex nzVertical>
-            <nz-card class="inner-box flex-item" [nzBordered]="true" *ngFor="let job of jobList()"
-                (click)="onSelectJob(job.id)">
-                <p class="title">{{job.title}}</p>
-                <p>Company: {{job.companyName}}</p>
-                <p>{{setups[job.setup]}}, {{employmentTypes[job.employmentType]}}</p>
-            </nz-card>
-        </div>
     </div>
 </div>
